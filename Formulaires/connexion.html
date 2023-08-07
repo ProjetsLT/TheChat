@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Connexion</title>
+</head>
+<body>
+
+    <form action="../PHP/connexion.php" method="post" name="formCo" id="formCo" 
+    class="bg-teal-300 w-1/3 ml-96 mt-52">
+        <h2 class="text-3xl text-center">Connexion</h2>
+        <br>
+        <div class="text-center">
+            <input type="text" placeholder="Identifiant"  name="identifiantCo" id="identifiantCo">
+            <br>
+            <br>
+            <input type="password" placeholder="Mot de passe" name="mdpCo" id="mdpCo">
+        </div>
+        <br>
+        <div class="text-center space-y-4">
+            <button type="submit" class="rounded-full bg-black text-white ">Se connecter</button>
+        </div>
+    </form>
+   
+</body>
+</html>
