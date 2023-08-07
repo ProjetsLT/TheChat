@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Inscription</title>
+</head>
+<body>
+
+    <a href="/index.html">Retour</a>
+
+    <form action="../PHP/inscription.php" method="post" name="formIns" id="formIns" 
+    class="bg-teal-300 w-1/3 ml-96 mt-52">
+        <h2 class="text-3xl text-center">Inscription</h2>
+        <br>
+        <div class="text-center">
+            <input type="text" placeholder="Identifiant"  name="identifiantCo" id="identifiantCo">
+            <br>
+            <br>
+            <input type="password" placeholder="Mot de passe" name="mdpCo" id="mdpCo">
+        </div>
+        <br>
+        <div class="text-center">
+            <button type="submit" class="rounded-full bg-black text-white w-28">S'inscrire</button>
+        </div>
+    </form>
+
+</body>
+</html>
