@@ -1,5 +1,4 @@
 <?php
-
 $addServeur = '127.0.0.1';
 $nomBdd = 'TheChat';
 $utilisateur = 'root';
@@ -14,5 +13,4 @@ try {
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données: " . $e->getMessage();
 }
-
 ?>
