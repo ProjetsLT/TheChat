@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -49,14 +50,47 @@
         </div>
     </section>
 
-    <section class="mid-page bg-white h-screen">
-        <div class="h-96 mt-5">
-            <p></p>
-            <img src="./images/chat.png" alt="image chat" class="h-96">
+    <section class="mid-page bg-white h-screen bg-no-repeat flex justify-center items-center">
+        <div class="flex h-96 w-2/3 justify-center items-center">
+            <div class="w-2/3 p-10 bg-gray-100 rounded-lg shadow-md text-center">
+                <p class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500 ">Une application qui a pour but de révolutionner la communication !</p>
+                <p class="mt-4 text-lg">Avec ces fonctionnalités avancées ainsi que sa rapidité d'exécution, The Chat est fait pour vous</p>
+            </div>
+            <div class="w-1/2 mt-4 ml-20 flex justify-center items-center">
+                <img src="./images/chat.png" alt="image chat" class="h-128">
+            </div>
         </div>
     </section>
 
-    <section class="footer bg-white h-screen">
+    
+    <section class="mid-page bg-white h-screen bg-no-repeat flex justify-center items-center" style="margin-top: -25vh;">
+        <div class="flex h-96 w-2/3 justify-center items-center">
+            <div class="w-1/2 mt-4 mr-10 flex justify-center items-center">
+                <lottie-player src="./images/animationTeam.json" autoplay loop class="h-96"></lottie-player>
+            </div>
+            <div class="w-2/3 p-10 bg-gray-100 rounded-lg shadow-md text-center">
+                <p class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500 ">La collaboration au centre de tout</p>
+                <p class="mt-4 text-lg">The Chat met en avant la collaboration entre vos équipes qu'elles soient d'ordre publics ou privés</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mid-page bg-white h-screen bg-no-repeat flex justify-center items-center" style="margin-top: -25vh;">
+        <div class="flex h-96 w-2/3 justify-center items-center">
+            <div class="w-2/3 p-10 bg-gray-100 rounded-lg shadow-md text-center">
+                <p class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500 ">Mettre en avant la sécurité</p>
+                <p class="mt-4 text-lg">Vous êtes garantis d'échanges toujours sécurisés avec vos 
+                amis ou vos collaborateurs avec The Chat pas de surprises la sécurité est primordiales !</p>
+            </div>
+            <div class="w-1/2 mt-4 ml-20 flex justify-center items-center">
+                <lottie-player src="./images/animationSecu.json" autoplay loop class="h-96"></lottie-player>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="footer bg-white h-screen bg-no-repeat">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum hic, molestiae, aspernatur enim, amet unde eveniet porro iure numquam optio dolor aliquid. A, ipsum? Possimus quam ipsam commodi delectus.</p>
     </section>
 
