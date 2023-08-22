@@ -24,7 +24,7 @@
         </div>
 
         <div class="mt-2 order-3 sm:order-3">
-            <button onclick="goBack()" type="submit" name="btnRetour" name="btnRetour"
+            <button onclick="retour()" type="submit" name="btnRetour" name="btnRetour"
             class="border-2 border-indigo-700 bg-indigo-700 
             text-white py-1 px-4 w-full rounded-lg flex items-center justify-center gap-2 hover:bg-transparent hover:text-indigo-700 
             font-semibold text-lg"> Retour <i class="fa-solid fa-rotate-left"></i>
@@ -33,11 +33,7 @@
 
     </div>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    
+    <script src="../JS/fonctions.js"></script>
+
 </body>
 </html>
