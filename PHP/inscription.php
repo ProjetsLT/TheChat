@@ -1,4 +1,6 @@
 <?php
+// session_start(); // penser à activer si besoin des sessions
+
 require_once("./PDO.php");
 
 if(isset($_POST['btnIns']))
@@ -24,7 +26,9 @@ if(isset($_POST['btnIns']))
                 {
                     $insertMbr = $bdd->prepare("INSERT INTO membres(nom, prenom, mail, pseudo, mdp) VALUES(?,?,?,?,?)");
                     $insertMbr->execute(array($nom, $prenom, $mail, $pseudo, $mdp));
-                    header('Location: profil.php');  
+                    // $_SESSION['pseudo'] = $pseudo; // si besoin d'aller direct page profil
+                    // header('Location: profil.php');  
+                    header('Location: ../Formulaires/connexion.html');  
                     exit;
                 } else {
                     $message = "Les mots de passe de correspondent pas";

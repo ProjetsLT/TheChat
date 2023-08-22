@@ -20,5 +20,6 @@ require_once("./PDO.php");
 </head>
 <body>
     <h1>Page de profil personnel</h1>
+    <?php echo "Profil de : " . $_SESSION['pseudo']; ?>
 </body>
 </html>
