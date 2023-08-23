@@ -20,7 +20,7 @@ if(isset($_POST['btnCo']))
             $_SESSION['pseudo'] = $utilisateurInfo['pseudo'];
             $_SESSION['mdp'] = $utilisateurInfo['mdp'];
             $_SESSION['idMembre'] = $utilisateurInfo['idMembre'];
-            header("Location: profil.php");
+            header("Location: accueil.php");
             exit;
             
         } else {
