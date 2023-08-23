@@ -28,18 +28,33 @@
 </head>
 <body class="bg-[url('../TheChat/images/Cloudy.svg')] bg-cover bg-no-repeat h-screen">
 
-    <!-- Menu de navigation -->
     <nav class="text-white p-2">
-        <div class="flex justify-center items-center space-x-8">
-            <img src="./images/Logo_TheChat_sans_écriture.png" alt="Logo" class="w-20 h-20">
-            <ul class="flex space-x-8 text-lg font-semibold">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-8">
+                <img src="./images/Logo_TheChat_sans_écriture.png" alt="Logo" class="w-20 h-20">
+                <!-- Utilisation des classes de responsive design pour afficher le menu en ligne sur les grands écrans -->
+                <ul id="main-menu" class="hidden md:flex space-x-8 text-lg font-semibold">
+                    <li><a href="#" class="hover:text-teal-300">Accueil</a></li>
+                    <li><a href="#" class="hover:text-teal-300">À propos</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Services</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Contact</a></li>
+                </ul>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+            <!-- Utilisation des classes de responsive design pour afficher le menu hamburger sur les petits écrans -->
+            <ul id="mobile-menu" class="hidden md:hidden text-sm font-semibold texte-white space-y-2">
                 <li><a href="#" class="hover:text-teal-300">Accueil</a></li>
                 <li><a href="#" class="hover:text-teal-300">À propos</a></li>
                 <li><a href="#" class="hover:text-teal-300">Services</a></li>
                 <li><a href="#" class="hover:text-teal-300">Contact</a></li>
             </ul>
-        </div>
     </nav>
+    
 
 
     <section class="top-page h-screen">
@@ -154,6 +169,8 @@
         <p class="text-center text-gray-500 mt-4">&copy; 2023 The Chat. Tous droits réservés.</p>
     </div>
     </section>
+
+    <script src="./JS/menuNav.js"></script>
 
 </body>
 </html>
