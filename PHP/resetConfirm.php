@@ -33,7 +33,9 @@ require_once('./PDO.php');
 
                 echo "Votre mot de passe a été réinitialisé avec succès.";
             } else {
-                echo "Token invalide.";
+                $message = "Token invalide";
+                header('Location: erreurs.php?message=' . urlencode($message));
+                exit;
             }
         } else {
             echo "<form action='' method='post'>";
@@ -43,7 +45,9 @@ require_once('./PDO.php');
             echo "</form>";
         }
     } else {
-        echo "Token manquant.";
+        $message = "Token manquant";
+        header('Location: erreurs.php?message=' . urlencode($message));
+        exit;
     }
     ?>
 </body>

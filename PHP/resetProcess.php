@@ -27,10 +27,14 @@ require_once('./PDO.php');
             if (mail($to, $subject, $message, $headers)) {
                 echo "Un e-mail de réinitialisation a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception.";
             } else {
-                echo "Une erreur s'est produite lors de l'envoi de l'e-mail.";
+                $message = "Une erreur s'est produite lors ded l'envoie de l'email";
+                header('Location: erreurs.php?message=' . urlencode($message));
+                exit;
             }
         } else {
-            echo "L'adresse e-mail n'a pas été trouvée dans notre base de données.";
+            $message = "L'adresse mail n'a pas été trouvée";
+            header('Location: erreurs.php?message=' . urlencode($message));
+            exit;
         }
     }
 
