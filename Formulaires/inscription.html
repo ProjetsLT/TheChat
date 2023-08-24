@@ -11,61 +11,58 @@
 </head>
 <body class="bg-[url('../images/Cloudy.svg')] bg-cover h-screen">
 
-    <div class="flex justify-center items-center h-screen bg-white-300">
-        <form action="../PHP/inscription.php" method="post">
-            <div class="w-96 p-6 shadow-lg bg-gradient-to-r from-indigo-300 to-teal-300 rounded-md">
-                <h1 class="text-2xl block text-center font-semibold"> <i class="fa-regular fa-user"></i> Inscription</h1>
-                <hr class="mt-3">
-                <div class="mt-3">
-                    <label for="nom" class="block text-base mb-2">Nom</label>
-                    <input type="text" name="nom" id="nom" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Entrer votre nom">
-                </div>
-                <div class="mt-3">
-                    <label for="prenom" class="block text-base mb-2">Prenom</label>
-                    <input type="text" name="prenom" id="prenom" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Entrer votre prenom">
-                </div>
-                <div class="mt-3">
-                    <label for="mail" class="block text-base mb-2">Adresse mail</label>
-                    <input type="email" name="mail" id="mail" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Entrer votre mail">
-                </div>
-                <div class="mt-3">
-                    <label for="pseudo" class="block text-base mb-2">Pseudo</label>
-                    <input type="text" name="pseudo" id="pseudo" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Entrer votre pseudo">
-                </div>
-                <div class="mt-3">
-                    <label for="mdpIns" class="block text-base mb-2">Mot de passe</label>
-                    <input type="password" name="mdpIns" id="mdpIns" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Entrer votre mot de passe">
-                </div>
-                <div class="mt-3">
-                    <label for="mdpIns" class="block text-base mb-2">Confirmation du mot de passe</label>
-                    <input type="password" name="mdpIns2" id="mdpIns" 
-                    class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
-                    placeholder="Confirmer votre mot de passe">
-                </div>
-                <div class="mt-5 flex justify-center items-center text-base">
-                    <p>Vous avez un compte ?</p>
-                </div>
-                <div class="mt-1 flex justify-center items-center">
-                    <a href="../Formulaires/connexion.html" class="text-indigo-600">Connectez-vous</a>
-                </div>
-                <div class="mt-5">
-                    <button type="submit" name="btnIns" id="btnIns"
-                    class="border-2 border-indigo-700 bg-indigo-700 
-                    text-white py-1 px-5 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold">S'inscrire</button>
-                </div>
+    <div class="flex justify-center items-center min-h-screen bg-white-300">
+        <form action="../PHP/inscription.php" method="post" class="w-full sm:w-96 p-4 shadow-lg bg-gradient-to-r from-indigo-300 to-teal-300 rounded-md max-w-md mx-auto sm:px-6">
+            <h1 class="text-lg md:text-xl block text-center font-semibold"> <i class="fa-regular fa-user"></i> Inscription</h1>
+            <hr class="mt-2 md:mt-3">
+            <div class="mt-2 md:mt-3">
+                <label for="nom" class="block text-sm md:text-base mb-1 md:mb-2">Nom</label>
+                <input type="text" name="nom" id="nom" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Entrer votre nom">
+            </div>
+            <div class="mt-2 md:mt-3">
+                <label for="prenom" class="block text-sm md:text-base mb-1 md:mb-2">Prenom</label>
+                <input type="text" name="prenom" id="prenom" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Entrer votre prenom">
+            </div>
+            <div class="mt-2 md:mt-3">
+                <label for="mail" class="block text-sm md:text-base mb-1 md:mb-2">Adresse mail</label>
+                <input type="email" name="mail" id="mail" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Entrer votre mail">
+            </div>
+            <div class="mt-2 md:mt-3">
+                <label for="pseudo" class="block text-sm md:text-base mb-1 md:mb-2">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudo" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Entrer votre pseudo">
+            </div>
+            <div class="mt-2 md:mt-3">
+                <label for="mdpIns" class="block text-sm md:text-base mb-1 md:mb-2">Mot de passe</label>
+                <input type="password" name="mdpIns" id="mdpIns" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Entrer votre mot de passe">
+            </div>
+            <div class="mt-2 md:mt-3">
+                <label for="mdpIns2" class="block text-sm md:text-base mb-1 md:mb-2">Confirmation du mot de passe</label>
+                <input type="password" name="mdpIns2" id="mdpIns2" 
+                class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
+                placeholder="Confirmer votre mot de passe">
+            </div>
+            <div class="mt-3 sm:mt-4 md:mt-5 flex justify-center items-center text-sm md:text-base">
+                <p class="text-center sm:text-left">Vous avez un compte ?</p>
+            </div>
+            <div class="mt-1 sm:mt-2 md:mt-3 flex justify-center items-center">
+                <a href="../Formulaires/connexion.html" class="text-indigo-600 text-sm md:text-base">Connectez-vous</a>
+            </div>
+            <div class="mt-4 sm:mt-5 md:mt-6">
+                <button type="submit" name="btnIns" id="btnIns"
+                class="border-2 border-indigo-700 bg-indigo-700 
+                text-white py-1 px-4 sm:px-5 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold text-sm md:text-base">S'inscrire</button>
             </div>
         </form>
-
     </div>
 
 </body>
