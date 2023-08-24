@@ -31,7 +31,9 @@ require_once('./PDO.php');
                 $updateStmt->bindParam(':token', $token);
                 $updateStmt->execute();
 
-                echo "Votre mot de passe a été réinitialisé avec succès.";
+                $message1 = "Votre mot de passe a été réinitialisé avec succès.";
+                header('Location: erreurs1.php?message=' . urlencode($message1));
+                exit;
             } else {
                 $message = "Token invalide";
                 header('Location: erreurs.php?message=' . urlencode($message));

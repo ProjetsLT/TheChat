@@ -25,7 +25,9 @@ require_once('./PDO.php');
             $headers = "From: webmaster@example.com";
 
             if (mail($to, $subject, $message, $headers)) {
-                echo "Un e-mail de réinitialisation a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception.";
+                $message1 = "Un e-mail de réinitialisation a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception.";
+                header('Location: erreurs1.php?message=' . urlencode($message1));
+                exit;
             } else {
                 $message = "Une erreur s'est produite lors ded l'envoie de l'email";
                 header('Location: erreurs.php?message=' . urlencode($message));
