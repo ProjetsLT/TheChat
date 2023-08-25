@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="../images/Logo_TheChat_sans_écriture.png" type="image/x-icon">
+    <script src="../JS/formulaires.js"></script>
     <title>Inscription</title>
 </head>
 <body class="bg-[url('../images/Cloudy.svg')] bg-cover h-screen">
@@ -44,6 +45,10 @@
                 <input type="password" name="mdpIns" id="mdpIns" 
                 class="border w-full text-sm md:text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600"
                 placeholder="Entrer votre mot de passe">
+                <div class="flex">
+                    <p id="passwordLengthMessage" class="text-md text-red-500">8 caractères minimum</p>
+                    <p id="passwordSpecialCharMessage" class="text-md text-red-500 ml-2">1 caractère spécial</p>
+                </div>
             </div>
             <div class="mt-2 md:mt-3">
                 <label for="mdpIns2" class="block text-sm md:text-base mb-1 md:mb-2">Confirmation du mot de passe</label>
