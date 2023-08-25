@@ -7,13 +7,17 @@ require_once('./PDO.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réinitialisation du mot de passe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+    <link rel="shortcut icon" href="../images/Logo_TheChat_sans_écriture.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Confirmation du changement</title>
 </head>
-<body>
+<body class="bg-[url('../images/Cloudy.svg')] bg-cover">
     <?php
     if (isset($_GET['token'])) {
         $token = $_GET['token'];
-        echo "<h1>Réinitialisation du mot de passe</h1>";
 
         if (isset($_POST['submit'])) {
             $newPassword = $_POST['mdp'];
@@ -40,10 +44,22 @@ require_once('./PDO.php');
                 exit;
             }
         } else {
-            echo "<form action='' method='post'>";
-            echo "<label for='mdp'>Nouveau mot de passe :</label>";
-            echo "<input type='password' id='mdp' name='mdp' required>";
-            echo "<button type='submit' name='submit'>Réinitialiser le mot de passe</button>";
+            echo "<form action='' method='post' class='flex justify-center items-center h-screen bg-white-300'>";
+            echo "<div class='w-96 p-6 shadow-lg bg-gradient-to-r from-indigo-300 to-teal-300 rounded-md'>";
+            echo "<h1 class='text-2xl block text-center font-semibold'>Réinitialiser votre mot de passe</h1>";
+            echo "<hr class='mt-3'>";
+            echo "<div class='mt-3'>";
+            echo "<label for='mdp' class='block text-base mb-2'>Nouveau mot de passe :</label>";
+            echo "<input type='password' id='mdp' name='mdp' required
+                class='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
+                placeholder='Entrer votre nouveau mot de passe'>";
+            echo "</div>";
+            echo "<div class='mt-5'>";
+            echo "<button type='submit' name='submit'
+                class='border-2 border-indigo-700 bg-indigo-700 
+                text-white py-1 px-5 w-full rounded-md hover:bg-transparent hover:text-indigo-700 font-semibold'>Réinitialiser le mot de passe</button>";
+            echo "</div>";
+            echo "</div>";
             echo "</form>";
         }
     } else {
