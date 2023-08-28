@@ -12,6 +12,7 @@ require_once('./PDO.php');
     <link rel="shortcut icon" href="../images/Logo_TheChat_sans_écriture.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../JS/formulaires.js"></script>
     <title>Confirmation du changement</title>
 </head>
 <body class="bg-[url('../images/Cloudy.svg')] bg-cover">
@@ -20,24 +21,35 @@ require_once('./PDO.php');
         $token = $_GET['token'];
 
         if (isset($_POST['submit'])) {
-            $newPassword = $_POST['mdp'];
+            $newPassword = $_POST['mdpIns'];
 
             $stmt = $bdd->prepare("SELECT * FROM membres WHERE token = :token");
             $stmt->bindParam(':token', $token);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
-                $mdpHash = sha1($newPassword);
+                $passwordValid = true;
 
-                $updatePasswordQuery = "UPDATE membres SET mdp = :mdp WHERE token = :token";
-                $updateStmt = $bdd->prepare($updatePasswordQuery);
-                $updateStmt->bindParam(':mdp', $mdpHash);
-                $updateStmt->bindParam(':token', $token);
-                $updateStmt->execute();
+                if (strlen($newPassword) < 8 || !preg_match('/[!@#$%^&*()_+[\]{};\\":|,.<>\/?]+/', $newPassword)) {
+                    $passwordValid = false;
+                    $message = "Le mot de passe doit avoir au moins 8 caractères et contenir au moins un caractère spécial.";
+                }
 
-                $message1 = "Votre mot de passe a été réinitialisé avec succès.";
-                header('Location: erreurs1.php?message=' . urlencode($message1));
-                exit;
+                if ($passwordValid) {
+                    $mdpHash = sha1($newPassword);
+                    $updatePasswordQuery = "UPDATE membres SET mdp = :mdpIns WHERE token = :token";
+                    $updateStmt = $bdd->prepare($updatePasswordQuery);
+                    $updateStmt->bindParam(':mdpIns', $mdpHash);
+                    $updateStmt->bindParam(':token', $token);
+                    $updateStmt->execute();
+
+                    $message1 = "Votre mot de passe a été réinitialisé avec succès.";
+                    header('Location: erreurs1.php?message=' . urlencode($message1));
+                    exit;
+                } else {
+                    header('Location: erreurs.php?message=' . urlencode($message));
+                    exit;
+                }
             } else {
                 $message = "Token invalide";
                 header('Location: erreurs.php?message=' . urlencode($message));
@@ -50,9 +62,13 @@ require_once('./PDO.php');
             echo "<hr class='mt-3'>";
             echo "<div class='mt-3'>";
             echo "<label for='mdp' class='block text-base mb-2'>Nouveau mot de passe :</label>";
-            echo "<input type='password' id='mdp' name='mdp' required
+            echo "<input type='password' id='mdpIns' name='mdpIns' required
                 class='border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600'
                 placeholder='Entrer votre nouveau mot de passe'>";
+            echo "<div class='flex'>";
+            echo "<p id='passwordLengthMessage' class='text-md text-red-500'>8 caractères minimum</p>";
+            echo "<p id='passwordSpecialCharMessage' class='text-md text-red-500 ml-2'>1 caractère spécial</p>";
+            echo "</div>";
             echo "</div>";
             echo "<div class='mt-5'>";
             echo "<button type='submit' name='submit'
