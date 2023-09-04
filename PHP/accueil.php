@@ -26,16 +26,30 @@ session_start();
         <div class="mt-4 text-center">
             <p class="text-gray-800 font-semibold text-xl"><?php echo $_SESSION['pseudo']?></p>
         </div>
+        <div class="mb-8 mt-10">
+            <ul class="space-y-4 flex flex-col items-center">
+                <li>
+                    <a href="./accueil.php" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300">Chat général <i class="fa-regular fa-comments"></i></a>
+                </li>
+                <li>
+                    <a href="#" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300">Message privés <i class="fa-regular fa-envelope"></i></a>
+                </li>
+            </ul>
+        </div>
         <!-- Spacer -->
         <div class="flex-grow"></div>
         <!-- Menu Links -->
         <div class="mb-8">
             <ul class="space-y-4 flex flex-col items-center">
                 <li>
-                    <a href="./profil.php" class="block px-4 py-2 text-gray-800 text-xl hover:bg-gray-300">Profil</a>
+                    <a href="./profil.php" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300 hover:text-green-500">Profil <i class="fa-solid fa-user"></i></a>
                 </li>
                 <li>
-                    <a href="./deconnexion.php" class="block px-4 py-2 text-gray-800 text-xl hover:bg-gray-300">Se Déconnecter</a>
+                    <a href="./deconnexion.php" class="block px-4 py-2 text-red-500 text-xl 
+                    hover:bg-gray-300">Se Déconnecter <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </li>
             </ul>
         </div>

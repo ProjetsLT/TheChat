@@ -18,8 +18,45 @@ require_once("./PDO.php");
     
     <title>Profil utilisateur</title>
 </head>
-<body>
-    <h1>Page de profil personnel</h1>
-    <?php echo "Profil de : " . $_SESSION['pseudo']; ?>
+<body class="flex">
+
+    <!-- Vertical Menu -->
+    <div class="w-1/6 bg-gray-200 h-screen flex flex-col justify-between items-center">
+        <!-- Profile Picture -->
+        <div class="mt-6">
+            <img src="../images/Logo_TheChat_sans_écriture.png" alt="Profile Picture" class="w-40 h-40 mx-auto rounded-full bg-gray-300">
+        </div>
+        <!-- Username -->
+        <div class="mt-4 text-center">
+            <p class="text-gray-800 font-semibold text-xl"><?php echo $_SESSION['pseudo']?></p>
+        </div>
+        <div class="mb-8 mt-10">
+            <ul class="space-y-4 flex flex-col items-center">
+                <li>
+                    <a href="./accueil.php" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300">Chat général <i class="fa-regular fa-comments"></i></a>
+                </li>
+                <li>
+                    <a href="#" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300">Message privés <i class="fa-regular fa-envelope"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Spacer -->
+        <div class="flex-grow"></div>
+        <!-- Menu Links -->
+        <div class="mb-8">
+            <ul class="space-y-4 flex flex-col items-center">
+                <li>
+                    <a href="./profil.php" class="block px-4 py-2 text-gray-800 text-xl 
+                    hover:bg-gray-300 hover:text-green-500">Profil <i class="fa-solid fa-user"></i></a>
+                </li>
+                <li>
+                    <a href="./deconnexion.php" class="block px-4 py-2 text-red-500 text-xl 
+                    hover:bg-gray-300">Se Déconnecter <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
