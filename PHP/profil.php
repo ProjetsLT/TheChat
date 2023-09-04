@@ -1,7 +1,18 @@
 <?php
 session_start();
 
-require_once("./PDO.php");
+// Vérifiez si l'utilisateur est connecté en vérifiant si la clé de session 'pseudo' existe.
+if (!isset($_SESSION['pseudo'])) {
+    // L'utilisateur n'est pas connecté, redirigez-le vers la page de connexion ou une autre page appropriée.
+    header("Location: ../Formulaires/connexion.html"); // Redirection vers la page de connexion.
+    exit();
+}
+
+// Si l'utilisateur est connecté, vous pouvez maintenant récupérer les données de session et afficher la page "profil.php".
+$pseudo = $_SESSION['pseudo'];
+$mail = $_SESSION['mail'];
+$nom = $_SESSION['nom'];
+$prenom = $_SESSION['prenom'];
 
 ?>
 
@@ -58,5 +69,28 @@ require_once("./PDO.php");
             </ul>
         </div>
     </div>
+
+<form action="modifProfil.php" method="POST">
+    <div class="mb-4">
+        <label for="pseudo" class="block text-gray-800 font-semibold">Pseudo:</label>
+        <input type="text" id="pseudo" name="pseudo" value="<?php echo $pseudo; ?>" class="w-full px-4 py-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <label for="email" class="block text-gray-800 font-semibold">Adresse E-mail:</label>
+        <input type="email" id="email" name="email" value="<?php echo $mail; ?>" class="w-full px-4 py-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <label for="nom" class="block text-gray-800 font-semibold">Nom:</label>
+        <input type="text" id="nom" name="nom" value="<?php echo $nom; ?>" class="w-full px-4 py-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <label for="prenom" class="block text-gray-800 font-semibold">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" value="<?php echo $prenom; ?>" class="w-full px-4 py-2 border rounded">
+    </div>
+    <div class="mb-4">
+        <input type="submit" value="Enregistrer les modifications" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+    </div>
+</form>
+
 </body>
 </html>

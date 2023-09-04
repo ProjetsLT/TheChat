@@ -19,6 +19,9 @@ if(isset($_POST['btnCo']))
             $utilisateurInfo = $reqUtilisateur->fetch();
             $_SESSION['pseudo'] = $utilisateurInfo['pseudo'];
             $_SESSION['mdp'] = $utilisateurInfo['mdp'];
+            $_SESSION['mail'] = $utilisateurInfo['mail'];
+            $_SESSION['nom'] = $utilisateurInfo['nom'];
+            $_SESSION['prenom'] = $utilisateurInfo['prenom'];
             $_SESSION['idMembre'] = $utilisateurInfo['idMembre'];
             header("Location: accueil.php");
             exit;
